@@ -1,220 +1,147 @@
 :root {
-    --bg-dark: #0a0a0c;
-    --accent: #c49a6c; /* Dorado Hextech */
-    --text-main: #f0e6d2;
-    --card-bg: #1a1a1c;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInPoro {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+    --bg: #0a0a0c;
+    --card: #16161a;
+    --accent: #c49a6c;
+    --gold: #f0e6d2;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: white;
     overflow-x: hidden;
-    padding: 20px; /* Espacio para el Poro */
-    box-sizing: border-box; /* Para que el padding no cause scroll */
 }
 
-/* El Poro de League of Legends con animación */
-.poro-container {
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto Parallax */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.profile-circle {
+    width: 150px; height: 150px;
+    background: url('poro.png') center/cover; /* Puedes poner su foto aquí */
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    margin: 0 auto 20px;
+    box-shadow: 0 0 30px rgba(196, 154, 108, 0.4);
+}
+
+.hero h1 { font-size: 3.5rem; margin: 0; letter-spacing: -1px; }
+.accent-text { color: var(--accent); font-size: 1.5rem; font-weight: 300; }
+
+/* Poro Companion */
+.poro-companion {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 80px;
-    z-index: 100;
-    cursor: pointer;
-    animation: slideInPoro 0.8s ease-out forwards;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    z-index: 1000;
+    transition: transform 0.3s;
 }
 
-.poro-gif {
-    width: 100%;
-    filter: drop-shadow(0 0 10px rgba(196, 154, 108, 0.5));
-    transition: transform 0.3s ease;
-}
+.poro-companion img { width: 100%; filter: drop-shadow(0 5px 15px black); }
 
-.poro-container:hover .poro-gif {
-    transform: scale(1.2) translateY(-10px);
-}
-
-.poro-speech {
+.bubble {
     position: absolute;
-    top: -40px;
+    top: -50px;
     right: 0;
     background: white;
     color: black;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 10px;
-    width: 100px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none; /* Para que no bloquee clics */
-}
-
-.poro-container:hover .poro-speech { opacity: 1; }
-
-/* Diseño Principal y Animaciones de Entrada */
-.main-card {
-    background: var(--card-bg);
-    width: 90%;
-    max-width: 450px;
-    padding: 40px 20px;
-    border-radius: 24px;
-    border: 1px solid #333;
-    text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-header {
-    margin-bottom: 30px;
-}
-
-.avatar {
-    width: 100px; height: 100px;
-    background: linear-gradient(45deg, var(--accent), #e1ad72);
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    border: 3px solid var(--accent);
-    animation: fadeIn 0.6s ease-out forwards; /* Animación de entrada para el avatar */
-}
-
-h1 { font-size: 2.2rem; margin-bottom: 8px; animation: fadeIn 0.7s ease-out forwards; }
-.tagline { color: var(--accent); font-weight: bold; font-size: 1.1rem; animation: fadeIn 0.8s ease-out forwards; }
-.bio { font-size: 0.95rem; color: #ccc; margin-top: 15px; line-height: 1.6; animation: fadeIn 0.9s ease-out forwards; }
-
-.price-badge {
-    display: inline-block;
-    background: rgba(196, 154, 108, 0.1);
-    color: var(--accent);
-    padding: 7px 18px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    border: 1px solid var(--accent);
-    margin-top: 20px;
-    font-weight: 600;
-    animation: fadeIn 1s ease-out forwards;
-}
-
-/* Links y Demos con animaciones escalonadas */
-.links-section, .demos-section {
-    margin-top: 30px;
-}
-
-.link-btn, .demo-card {
-    opacity: 0; /* Ocultar inicialmente para la animación */
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
-}
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-/* Puedes añadir más .delay-X si tienes más elementos */
-
-.link-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #252528;
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    margin: 12px 0;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.link-btn:hover {
-    background: #2d2d31;
-    border-color: var(--accent);
-    transform: translateY(-3px) scale(1.01);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.link-btn i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-    color: var(--accent);
-}
-
-h3 {
-    margin-bottom: 20px;
-    text-align: left;
-    border-left: 4px solid var(--accent);
-    padding-left: 15px;
-    font-size: 1.3rem;
-    animation: fadeIn 1s ease-out forwards;
-}
-
-.demo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsivo */
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.demo-card {
-    background: #121214;
-    padding: 20px;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #888;
-    font-size: 0.85rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100px;
-    transition: 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.demo-card:hover {
-    background: #1e1e20;
-    border-color: var(--accent);
-    transform: translateY(-3px) scale(1.01);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.demo-card i {
-    font-size: 2.2rem;
-    color: var(--accent);
-    margin-bottom: 10px;
-}
-
-.demo-card p {
-    margin: 0;
-    font-weight: 500;
-    color: var(--text-main);
-}
-
-footer {
-    margin-top: 50px;
-    font-size: 0.75rem;
-    color: #666;
-    animation: fadeIn 1.2s ease-out forwards;
-}
-
-.brand {
-    color: var(--accent);
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 0.7rem;
     font-weight: bold;
+    width: 120px;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.poro-companion:hover .bubble { opacity: 1; top: -60px; }
+.poro-companion:hover { transform: scale(1.1) rotate(5deg); }
+
+/* Sections */
+section { padding: 100px 0; }
+
+h2 { font-size: 2.5rem; margin-bottom: 40px; }
+
+.status-badge {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    color: var(--accent);
+    margin-top: 20px;
+}
+
+/* Grid de Trabajo */
+.work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.work-item {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.4s;
+    border: 1px solid #222;
+}
+
+.work-item:hover {
+    background: #1c1c21;
+    border-color: var(--accent);
+    transform: translateY(-10px);
+}
+
+.work-item i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+
+/* Social Buttons */
+.social-btns { display: flex; gap: 20px; justify-content: center; }
+
+.s-btn {
+    padding: 15px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.tt { background: #25f4ee1a; border: 1px solid #25f4ee; }
+.ig { background: #fd1d1d1a; border: 1px solid #fd1d1d; }
+
+.s-btn:hover { transform: scale(1.05); filter: brightness(1.2); }
+
+footer { padding: 50px; text-align: center; color: #555; border-top: 1px solid #111; }
+
+/* Scroll Indicator */
+.scroll-indicator {
+    margin-top: 50px;
+    opacity: 0.6;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .work-grid { grid-template-columns: 1fr; }
 }
