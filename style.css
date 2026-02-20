@@ -31,6 +31,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
 }
 
 .profile-circle {
@@ -45,6 +46,21 @@ body {
 
 .hero h1 { font-size: 3.5rem; margin: 0; letter-spacing: -1px; }
 .accent-text { color: var(--accent); font-size: 1.5rem; font-weight: 300; }
+
+/* Flecha Animada */
+.scroll-indicator {
+    margin-top: 50px;
+    font-size: 1.8rem;
+    color: var(--accent);
+    opacity: 0.8;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
 
 /* Poro Companion */
 .poro-companion {
@@ -82,7 +98,7 @@ body {
 .poro-companion:hover { transform: scale(1.1) rotate(5deg); }
 
 /* Secciones Generales */
-section { padding: 80px 0; text-align: center; }
+section { padding: 100px 0; text-align: center; }
 h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--gold); }
 .desc-text { max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
 
@@ -153,46 +169,21 @@ footer { padding: 50px; text-align: center; color: #555; border-top: 1px solid #
 
 /* --- ADAPTACIÓN PARA CELULARES --- */
 @media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll; /* Mejora rendimiento en móvil */
-    }
-
+    .hero { background-attachment: scroll; }
     .hero h1 { font-size: 2.2rem; }
     .accent-text { font-size: 1.1rem; }
     
-    .profile-circle {
-        width: 120px;
-        height: 120px;
-    }
+    .profile-circle { width: 120px; height: 120px; }
+    .scroll-indicator { font-size: 1.4rem; margin-top: 30px; }
 
-    section { padding: 50px 0; }
+    section { padding: 60px 0; }
     h2 { font-size: 1.8rem; }
 
-    .work-grid {
-        grid-template-columns: 1fr; /* Una sola columna */
-        padding: 0 10px;
-    }
+    .work-grid { grid-template-columns: 1fr; padding: 0 10px; }
 
-    .social-btns {
-        flex-direction: column;
-        align-items: center;
-    }
+    .social-btns { flex-direction: column; align-items: center; }
+    .s-btn { width: 100%; max-width: 280px; justify-content: center; }
 
-    .s-btn {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
-    }
-
-    .poro-companion {
-        width: 70px;
-        bottom: 15px;
-        right: 15px;
-    }
-
-    .bubble {
-        width: 90px;
-        font-size: 0.6rem;
-        top: -35px;
-    }
+    .poro-companion { width: 70px; bottom: 15px; right: 15px; }
+    .bubble { width: 90px; font-size: 0.6rem; top: -35px; }
 }
