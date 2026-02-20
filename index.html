@@ -3,53 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleksander Figueroa | Actor de Doblaje</title>
+    <title>Aleksander Figueroa | Voice Artist</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-    <div class="poro-container">
-        <img src="https://raw.githubusercontent.com/Khada Jhin/Poro-Assets/master/poro.png" alt="Poro" class="poro-gif">
-        <div class="poro-speech">¡Hola! El precio es negociable</div>
+    <div class="poro-companion" id="poro">
+        <div class="bubble">¡El precio es negociable! ✨</div>
+        <img src="poro.png" alt="Poro">
     </div>
 
-    <div class="main-card">
-        <header>
-            <div class="avatar"></div>
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(10,10,12,1)), url('alekbanner.jpg');">
+        <div class="hero-content" data-aos="zoom-in">
+            <div class="profile-circle"></div>
             <h1>Aleksander Figueroa</h1>
-            <p class="tagline">Actor de doblaje 🎧 | Voz con carácter y pasión</p>
-            <p class="bio">En constante formación, grabando desde cabina tratada para ofrecer calidad profesional.</p>
-            <span class="price-badge">Precio negociable 🤝</span>
-        </header>
+            <p class="accent-text">Actor de Doblaje & Locutor Profesional</p>
+            <div class="scroll-indicator">
+                <span>Scrollea para explorar</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
 
-        <section class="links-section">
-            <a href="https://www.tiktok.com/@alivoxstudio" class="link-btn fade-in" target="_blank">
-                <i class="fab fa-tiktok"></i> TikTok (Alivox Studio)
-            </a>
-            <a href="https://www.instagram.com/alek_figueroa" class="link-btn fade-in delay-1" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-        </section>
+    <section class="about" data-aos="fade-up">
+        <div class="container">
+            <h2>Sobre mi trabajo</h2>
+            <p>Voz con carácter y pasión. En constante formación, grabando desde cabina tratada para ofrecer calidad profesional en cada toma.</p>
+            <div class="status-badge">Disponible para proyectos • Precio Negociable</div>
+        </div>
+    </section>
 
-        <section class="demos-section">
-            <h3>🎙️ Escucha mi trabajo</h3>
-            <div class="demo-grid">
-                <a href="https://drive.google.com/drive/folders/1091drCgLVFgJI6wtn4a8zCkSAM35hqfz" class="demo-card fade-in delay-2" target="_blank">
-                    <i class="fas fa-play-circle"></i>
-                    <p>Reel Comercial</p>
+    <section class="work">
+        <div class="container">
+            <h2 data-aos="fade-right">🎙️ Portafolio de Voz</h2>
+            <div class="work-grid">
+                <a href="https://drive.google.com/drive/folders/1091drCgLVFgJI6wtn4a8zCkSAM35hqfz" class="work-item" data-aos="flip-left">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Reel Comercial</h3>
+                    <p>Locución para marcas y publicidad.</p>
                 </a>
-                <a href="https://drive.google.com/drive/folders/1H0tC98XUw1bC2awvv9YpaNuKYiWDPbvZ" class="demo-card fade-in delay-3" target="_blank">
-                    <i class="fas fa-play-circle"></i>
-                    <p>Personajes / Doblaje</p>
+                <a href="https://drive.google.com/drive/folders/1H0tC98XUw1bC2awvv9YpaNuKYiWDPbvZ" class="work-item" data-aos="flip-right">
+                    <i class="fas fa-theater-masks"></i>
+                    <h3>Personajes</h3>
+                    <p>Doblaje de animación y videojuegos.</p>
                 </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer>
-            <p>© 2024 | <span class="brand">Olivas Corporation</span></p>
-        </footer>
-    </div>
+    <section class="social-footer">
+        <div class="container">
+            <h2>Conecta conmigo</h2>
+            <div class="social-btns">
+                <a href="https://www.tiktok.com/@alivoxstudio" target="_blank" class="s-btn tt"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="https://www.instagram.com/alek_figueroa" target="_blank" class="s-btn ig"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </section>
 
+    <footer>
+        <p>© 2026 | Desarrollado por <strong>Olivas Corporation</strong></p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
