@@ -5,7 +5,7 @@
     --gold: #f0e6d2;
 }
 
-/* Scroll Suave */
+/* Scroll Suave Nativo */
 html {
     scroll-behavior: smooth;
 }
@@ -52,59 +52,32 @@ body {
 .hero h1 { font-size: 3.5rem; margin: 0; letter-spacing: -1px; }
 .accent-text { color: var(--accent); font-size: 1.5rem; font-weight: 300; }
 
-/* --- ESTILO SCROLL MOUSE ESTÉTICO --- */
-.scroll-container {
-    margin-top: 40px;
+/* --- INDICADOR DE SCROLL CSS PURO --- */
+.scroll-wrapper {
+    margin-top: 50px;
     display: inline-block;
-    text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.mouse {
-    width: 26px;
-    height: 42px;
-    border: 2px solid var(--accent);
-    border-radius: 20px;
-    margin: 0 auto 8px;
-    position: relative;
-}
-
-.wheel {
-    width: 4px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 2px;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scroll-wheel 1.5s infinite;
-}
-
-.scroll-arrows span {
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-bottom: 2px solid var(--accent);
-    border-right: 2px solid var(--accent);
+.scroll-arrow {
+    width: 15px;
+    height: 15px;
+    border-right: 3px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
     transform: rotate(45deg);
-    margin: -4px auto 0;
-    animation: arrows 1.5s infinite;
+    margin: -8px auto;
+    animation: arrow-down 2s infinite;
+    opacity: 0;
 }
 
-.scroll-arrows span:nth-child(2) {
-    animation-delay: 0.2s;
-}
+.scroll-arrow:nth-child(2) { animation-delay: 0.2s; }
+.scroll-arrow:nth-child(3) { animation-delay: 0.4s; }
 
-@keyframes scroll-wheel {
-    0% { opacity: 1; top: 6px; }
-    100% { opacity: 0; top: 18px; }
-}
-
-@keyframes arrows {
-    0% { opacity: 0; transform: rotate(45deg) translate(-5px, -5px); }
+@keyframes arrow-down {
+    0% { opacity: 0; transform: rotate(45deg) translate(-10px, -10px); }
     50% { opacity: 1; }
-    100% { opacity: 0; transform: rotate(45deg) translate(5px, 5px); }
+    100% { opacity: 0; transform: rotate(45deg) translate(10px, 10px); }
 }
 
 /* Poro Companion */
@@ -142,7 +115,7 @@ body {
 .poro-companion:hover .bubble { opacity: 1; top: -60px; }
 .poro-companion:hover { transform: scale(1.1) rotate(5deg); }
 
-/* Secciones Generales */
+/* Secciones */
 section { padding: 100px 0; text-align: center; }
 h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--gold); }
 .desc-text { max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
@@ -159,7 +132,7 @@ h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--gold); }
     font-size: 0.8rem;
 }
 
-/* Portafolio Grid */
+/* Grid de Trabajo */
 .work-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -185,7 +158,7 @@ h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--gold); }
 
 .work-item i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
 
-/* Botones Sociales */
+/* Redes Sociales */
 .social-btns { 
     display: flex; 
     gap: 20px; 
@@ -212,16 +185,14 @@ h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--gold); }
 
 footer { padding: 50px; text-align: center; color: #555; border-top: 1px solid #111; }
 
-/* --- ADAPTACIÓN PARA CELULARES --- */
+/* --- RESPONSIVE MÓVIL --- */
 @media (max-width: 768px) {
     .hero { background-attachment: scroll; }
     .hero h1 { font-size: 2.2rem; }
     .accent-text { font-size: 1.1rem; }
     
     .profile-circle { width: 120px; height: 120px; }
-    
-    .scroll-container { margin-top: 30px; }
-    .mouse { width: 22px; height: 36px; }
+    .scroll-wrapper { margin-top: 30px; }
 
     section { padding: 60px 0; }
     h2 { font-size: 1.8rem; }
